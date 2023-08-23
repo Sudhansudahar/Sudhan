@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    char a[50],b;
+    scanf("%[^\n]s",a);
+    int i,j,k,c=0,s=0;
+    while(a[c]!='\0')
+    {
+        s=0;
+        for(i=c;a[i]!=' '&&a[i]!='\0';i++)
+        {
+            s++;
+        }
+        for(j=c;j<i;j++)
+        {
+            for(k=j+1;k<i;k++)
+            {
+                b=a[j];
+                a[j]=a[k];
+                a[k]=b;
+            }
+        }
+        c=i+1;
+    }
+    printf("%s",a);
+    return 0;
+}
